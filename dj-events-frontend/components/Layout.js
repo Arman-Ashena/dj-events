@@ -1,8 +1,12 @@
 import { Grid, Link, List, ListItem, Typography } from "@mui/material";
 import NextLink from "next/link";
 import Head from "next/head";
+import Showcase from "./Showcase";
+import { useRouter } from "next/router";
 
 const Layout = ({ title, description, keywords, children }) => {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -10,7 +14,6 @@ const Layout = ({ title, description, keywords, children }) => {
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
       </Head>
-
       <Grid
         padding={3}
         spacing={2}
@@ -33,8 +36,9 @@ const Layout = ({ title, description, keywords, children }) => {
           </NextLink>
         </Grid>
       </Grid>
-
+      {router.pathname === "/" && <Showcase />}
       {children}
+      {/* --------------------Footer-------------------------- */}
       <Grid
         container
         flexDirection="column"
