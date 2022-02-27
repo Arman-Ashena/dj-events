@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import Head from "next/head";
 import Showcase from "./Showcase";
 import { useRouter } from "next/router";
-
+import { Box } from "@mui/system";
 const Layout = ({ title, description, keywords, children }) => {
   const router = useRouter();
 
@@ -36,8 +36,11 @@ const Layout = ({ title, description, keywords, children }) => {
           </NextLink>
         </Grid>
       </Grid>
-      {router.pathname === "/" && <Showcase />}
-      {children}
+      {/* {router.pathname === "/" && <Showcase />} */}
+      <Showcase />
+      <Box sx={{ margin: "60px auto", maxWidth: "960px", padding: "0 30px" }}>
+        {children}
+      </Box>
       {/* --------------------Footer-------------------------- */}
       <Grid
         container

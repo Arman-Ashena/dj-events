@@ -1,0 +1,35 @@
+.event {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding: 13px;
+  box-shadow: 2px 3px 50px rgba(0, 200, 0, 0.1);
+}
+/* با استفاده از فلکس مساوی یک برای عکس. باعث میشویم وقتی عرض صفحه را کوچیک میکنیم عکس هم کوچک یا شرینک شود */
+.img {
+  flex: 1;
+  margin: 10px;
+}
+/* فلکس وقتی 2 باشد فضای بیشتری در اختیار متن قرار میگید و وقتی که واقعا لازم باشد میشکنه و به خط بعد میرود */
+.info {
+  flex: 2;
+}
+.link {
+  background-color: red;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+.link a {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .event {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info {
+    margin-bottom: 20px;
+  }
+}
